@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081522">
+  <meta name="description" content="MLF BRASIL — plataforma de gestão e inteligência para operações de marketplace. Gestão Shopee e Mercado Livre, ciclos de crescimento, Shopee Vídeo e assistente inteligente supervisionado.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MLF BRASIL | Gestão inteligente para marketplaces">
+  <meta property="og:description" content="Organize a operação, acompanhe resultados e transforme dados em próximos passos com a MLF BRASIL.">
+  <meta property="og:image" content="assets/logo-mlf-brasil.png">
+  <title>MLF BRASIL | Gestão inteligente para marketplaces</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #081522;
+      --navy-2: #0b1c2d;
+      --navy-3: #10263a;
+      --ink: #13263a;
+      --muted: #627386;
+      --line: #e5ebf1;
+      --paper: #f5f8fb;
+      --white: #fff;
+      --cyan: #54d8ee;
+      --blue: #4a8df5;
+      --violet: #9c78ff;
+      --green: #38c99a;
+      --radius: 22px;
+      --shadow: 0 22px 70px rgba(6, 21, 37, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; font-family: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--ink); background: #fff; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(7, 19, 32, .91); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.09); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; min-width: 154px; }
+    .brand img { width: 132px; height: auto; display: block; object-fit: contain; }
+    .navlinks { display: flex; align-items: center; gap: 27px; color: #c5d0dc; font-size: 12px; font-weight: 600; }
+    .navlinks a { transition: color .2s ease; }
+    .navlinks a:hover { color: var(--cyan); }
+    .nav-cta { border: 1px solid rgba(84,216,238,.55); border-radius: 999px; color: #eafcff; padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+    .nav-cta:hover { background: rgba(84,216,238,.12); }
+    .mobile-nav { display: none; }
+    .hero { position: relative; overflow: hidden; color: white; background: radial-gradient(ellipse at 76% 15%, rgba(73,131,238,.22), transparent 36%), radial-gradient(ellipse at 8% 70%, rgba(86,216,238,.11), transparent 35%), linear-gradient(135deg, #071321 0%, #0b1c2d 54%, #10253a 100%); padding: 92px 0 104px; }
+    .hero:before { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .18; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 54px 54px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1fr .95fr; align-items: center; gap: 64px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #9cecf5; text-transform: uppercase; letter-spacing: .16em; font-size: 10px; font-weight: 800; }
+    .eyebrow:before { content: ''; width: 24px; height: 1px; background: var(--cyan); }
+    h1 { max-width: 690px; margin: 20px 0 22px; font-size: clamp(38px, 5vw, 62px); line-height: 1.12; letter-spacing: -.055em; font-weight: 700; }
+    h1 span { background: linear-gradient(90deg, #8ee9f2, #8eabff 52%, #c4a2ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { max-width: 580px; color: #b8c7d6; font-size: 15px; line-height: 1.9; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .btn-primary, .btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 11px; font-size: 12px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .btn-primary { color: #071522; background: linear-gradient(100deg, #8ce9ef, #9dbaff); box-shadow: 0 10px 30px rgba(84,216,238,.16); }
+    .btn-primary:hover, .btn-ghost:hover { transform: translateY(-2px); }
+    .btn-ghost { color: #e3edf6; border: 1px solid rgba(255,255,255,.18); }
+    .hero-note { margin-top: 23px; color: #8195a9; font-size: 10px; }
+    .hero-note strong { color: #a7bacb; font-weight: 600; }
+    .dashboard-scene { position: relative; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+    .orb { position: absolute; width: 340px; height: 340px; right: 8%; top: 7%; border-radius: 50%; background: radial-gradient(circle, rgba(81,151,244,.2), rgba(81,151,244,.04) 54%, transparent 68%); filter: blur(2px); }
+    .dash-window { position: relative; z-index: 1; width: min(100%, 490px); padding: 17px; border: 1px solid rgba(176,211,237,.2); border-radius: 19px; background: linear-gradient(145deg, rgba(20,42,62,.94), rgba(8,23,38,.94)); box-shadow: 0 30px 90px rgba(0,0,0,.36); transform: perspective(1100px) rotateY(-6deg) rotateX(2deg); }
+    .dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .dash-brand { display: flex; align-items: center; gap: 9px; color: #ecf6ff; font-weight: 700; font-size: 11px; }
+    .dash-symbol { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 8px; background: linear-gradient(135deg, #58d8e8, #738df4); color: #081522; font-size: 12px; }
+    .dash-tag { border: 1px solid rgba(84,216,238,.25); border-radius: 50px; color: #8cdef0; font-size: 8px; padding: 5px 8px; }
+    .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .metric { padding: 12px 11px; border: 1px solid rgba(188,215,240,.1); border-radius: 11px; background: rgba(255,255,255,.035); }
+    .metric-label { color: #8499ad; font-size: 8px; }
+    .metric-value { display: block; margin-top: 6px; color: #f0f7ff; font-weight: 700; font-size: 15px; }
+    .metric-hint { margin-top: 4px; color: #5fd8ba; font-size: 8px; }
+    .dash-bottom { display: grid; grid-template-columns: 1.15fr .85fr; gap: 10px; margin-top: 10px; }
+    .chart-card, .tasks-card { min-height: 145px; padding: 13px; border: 1px solid rgba(188,215,240,.1); border-radius: 11px; background: rgba(255,255,255,.035); }
+    .mini-head { display: flex; justify-content: space-between; align-items: center; color: #b7c9d8; font-size: 8px; font-weight: 600; }
+    .mini-head span:last-child { color: #71879b; font-size: 7px; font-weight: 400; }
+    .chart { height: 88px; display: flex; align-items: end; gap: 7px; padding: 12px 3px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .chart i { display: block; flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #65d8e8, #577be6); opacity: .85; }
+    .task { display: flex; align-items: center; gap: 7px; margin-top: 13px; color: #b7c8d8; font-size: 8px; }
+    .task-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(56,201,154,.4); }
+    .task-dot.blue { background: #64b8ee; box-shadow: 0 0 12px rgba(100,184,238,.4); }
+    .task-dot.purple { background: #a58aff; box-shadow: 0 0 12px rgba(165,138,255,.4); }
+    .floating-chip { position: absolute; z-index: 2; display: flex; align-items: center; gap: 9px; padding: 11px 14px; color: #eaf6ff; border: 1px solid rgba(177,212,239,.2); border-radius: 12px; background: rgba(12,31,49,.92); box-shadow: 0 15px 40px rgba(0,0,0,.24); font-size: 9px; }
+    .floating-chip strong { display: block; font-size: 10px; }
+    .floating-chip small { display: block; margin-top: 2px; color: #8da3b8; font-size: 8px; }
+    .chip-icon { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 8px; background: rgba(84,216,238,.12); color: #7de4f1; }
+    .chip-one { top: 5%; left: -4%; }
+    .chip-two { bottom: 5%; right: -2%; }
+    .trust-strip { position: relative; margin-top: -1px; padding: 24px 0; background: #0b1c2d; border-top: 1px solid rgba(255,255,255,.07); }
+    .trust-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; }
+    .trust-label { color: #71869a; font-size: 9px; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; }
+    .market { display: flex; align-items: center; gap: 9px; color: #e5edf5; font-size: 12px; font-weight: 700; }
+    .market-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; color: white; font-size: 11px; font-weight: 800; }
+    .market-mark.ml { background: #ffe36a; color: #253447; }
+    .market-mark.sp { background: #f46c4f; }
+    section { padding: 100px 0; }
+    .section-kicker { color: #5c91c7; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .section-title { margin: 13px 0 15px; color: var(--ink); font-size: clamp(30px, 4vw, 43px); line-height: 1.2; letter-spacing: -.045em; }
+    .section-copy { max-width: 690px; color: #65778a; font-size: 14px; line-height: 1.9; }
+    .intro-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 75px; align-items: start; }
+    .intro-points { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .point { padding: 21px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+    .point-icon { display: grid; place-items: center; width: 37px; height: 37px; margin-bottom: 13px; border-radius: 11px; color: #2479a8; background: #e9f7fb; }
+    .point h3 { margin: 0 0 7px; font-size: 13px; }
+    .point p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.8; }
+    .section-soft { background: var(--paper); }
+    .center-head { text-align: center; }
+    .center-head .section-copy { margin: 0 auto; }
+    .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 47px; }
+    .platform-card { position: relative; min-height: 305px; overflow: hidden; padding: 31px; border: 1px solid #e4ebf2; border-radius: var(--radius); background: #fff; box-shadow: 0 10px 30px rgba(22,47,72,.035); }
+    .platform-card:after { content: ''; position: absolute; top: -95px; right: -90px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(75,139,235,.11), transparent 68%); }
+    .platform-head { display: flex; align-items: center; gap: 13px; margin-bottom: 18px; }
+    .platform-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 13px; font-size: 17px; font-weight: 800; }
+    .platform-icon.shopee { background: #fff0e9; color: #ed6747; }
+    .platform-icon.mercado { background: #fff9d8; color: #3a556b; }
+    .platform-card h3 { margin: 0; font-size: 18px; }
+    .platform-card .sub { color: #8391a0; font-size: 10px; }
+    .platform-card p { position: relative; z-index: 1; color: #627386; font-size: 12px; line-height: 1.9; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+    .tag { display: inline-flex; padding: 7px 10px; border-radius: 7px; color: #52687d; background: #f2f6f9; font-size: 9px; font-weight: 600; }
+    .dark-section { color: white; background: linear-gradient(135deg, #081522, #10263a); }
+    .dark-section .section-kicker { color: #73d9e9; }
+    .dark-section .section-title { color: white; }
+    .dark-section .section-copy { color: #a9bac9; }
+    .growth-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; margin-top: 42px; }
+    .growth-list { display: grid; gap: 17px; }
+    .growth-step { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+    .step-number { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid rgba(110,207,232,.38); border-radius: 10px; color: #88e2ef; background: rgba(84,216,238,.08); font-size: 10px; font-weight: 800; }
+    .growth-step h3 { margin: 2px 0 5px; font-size: 13px; }
+    .growth-step p { margin: 0; color: #91a7bb; font-size: 10px; line-height: 1.8; }
+    .cycle-card { padding: 24px; border: 1px solid rgba(180,214,240,.15); border-radius: 20px; background: rgba(255,255,255,.045); }
+    .cycle-title { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #edf7ff; font-size: 12px; font-weight: 700; }
+    .cycle-pill { padding: 6px 9px; border: 1px solid rgba(56,201,154,.3); border-radius: 50px; color: #81e6c3; background: rgba(56,201,154,.08); font-size: 8px; }
+    .cycle-flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin-top: 22px; }
+    .flow-node { min-height: 82px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; padding: 8px 5px; border: 1px solid rgba(187,215,237,.13); border-radius: 10px; background: rgba(255,255,255,.035); text-align: center; }
+    .flow-node b { color: #e4f4ff; font-size: 9px; }
+    .flow-node span { color: #92a8bb; font-size: 7px; line-height: 1.4; }
+    .flow-icon { color: #75dce9; font-size: 16px; }
+    .cycle-note { margin: 16px 0 0; color: #8198ad; font-size: 9px; line-height: 1.8; }
+    .intelligence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 42px; }
+    .intelligence-card { padding: 29px; border: 1px solid var(--line); border-radius: 18px; background: white; }
+    .intelligence-card h3 { margin: 0 0 11px; font-size: 16px; }
+    .intelligence-card > p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.9; }
+    .mini-features { display: grid; gap: 11px; margin-top: 22px; }
+    .mini-feature { display: flex; align-items: flex-start; gap: 10px; color: #52687b; font-size: 10px; line-height: 1.7; }
+    .check { flex: 0 0 18px; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 6px; color: #138b70; background: #e7f8f2; font-size: 10px; font-weight: 800; }
+    .video-section { background: linear-gradient(180deg, #f5f8fb, #fff); }
+    .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; margin-top: 38px; }
+    .video-visual { min-height: 355px; position: relative; display: grid; place-items: center; border: 1px solid #e0eaf1; border-radius: 24px; background: radial-gradient(circle at 50% 45%, #dff6fb, #eef4fa 61%, #f7fafc); overflow: hidden; }
+    .phone { position: relative; width: 160px; height: 290px; border: 7px solid #14283b; border-radius: 27px; background: #fff; box-shadow: 0 22px 50px rgba(15,45,71,.2); overflow: hidden; }
+    .phone-screen { position: absolute; inset: 0; background: linear-gradient(180deg, #10263a 0 23%, #183c56 23% 24%, #eaf2f6 24%); }
+    .phone-top { position: absolute; top: 16px; left: 13px; right: 13px; display: flex; justify-content: space-between; color: #eafaff; font-size: 8px; }
+    .phone-video { position: absolute; left: 12px; right: 12px; top: 69px; height: 130px; display: grid; place-items: center; border-radius: 13px; background: linear-gradient(145deg, #6bcfdf, #708ce7 60%, #a78ce9); }
+    .play { width: 38px; height: 38px; display: grid; place-items: center; padding-left: 3px; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: white; background: rgba(255,255,255,.2); font-size: 15px; }
+    .phone-caption { position: absolute; top: 210px; left: 13px; right: 13px; color: #1b3348; font-size: 7px; font-weight: 700; }
+    .phone-lines { position: absolute; top: 231px; left: 13px; right: 30px; height: 4px; border-radius: 5px; background: #d6e0e8; box-shadow: 0 9px #e2e9ef, 0 18px #e2e9ef; }
+    .video-float { position: absolute; display: flex; align-items: center; gap: 9px; padding: 11px 13px; border: 1px solid #e3ebf1; border-radius: 12px; background: white; box-shadow: 0 14px 35px rgba(22,51,77,.1); }
+    .video-float strong { display: block; font-size: 9px; }
+    .video-float small { color: #8190a0; display: block; font-size: 8px; }
+    .video-float.a { top: 54px; left: 8%; }
+    .video-float.b { bottom: 45px; right: 7%; }
+    .video-feature-list { display: grid; gap: 15px; margin-top: 24px; }
+    .video-feature { display: grid; grid-template-columns: 31px 1fr; gap: 12px; }
+    .video-feature .feature-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; color: #287ea5; background: #e7f6fa; font-size: 13px; }
+    .video-feature b { display: block; margin-bottom: 3px; font-size: 11px; }
+    .video-feature span { display: block; color: #6c7e90; font-size: 10px; line-height: 1.8; }
+    .assistant-banner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; padding: 34px 38px; margin-top: 58px; border-radius: 19px; background: linear-gradient(105deg, #0b1c2d, #173a55); color: white; }
+    .assistant-banner h3 { margin: 0 0 8px; font-size: 19px; }
+    .assistant-banner p { max-width: 690px; margin: 0; color: #a7bdce; font-size: 10px; line-height: 1.8; }
+    .assistant-stamp { width: 72px; height: 72px; display: grid; place-items: center; border: 1px solid rgba(118,220,235,.35); border-radius: 20px; color: #86e2ed; background: rgba(84,216,238,.08); font-size: 29px; }
+    .safety-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-top: 39px; }
+    .safety-card { padding: 23px; border: 1px solid var(--line); border-radius: 15px; }
+    .safety-card b { display: block; margin: 13px 0 6px; font-size: 12px; }
+    .safety-card p { margin: 0; color: #6c7e90; font-size: 10px; line-height: 1.8; }
+    .safety-icon { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 10px; background: #eef5fb; color: #4b87bd; font-size: 15px; }
+    .faq { background: var(--paper); }
+    .faq-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 70px; }
+    .faq-list { display: grid; gap: 10px; }
+    details { padding: 18px 20px; border: 1px solid #e3eaf0; border-radius: 13px; background: white; }
+    summary { position: relative; padding-right: 25px; cursor: pointer; color: #21374b; font-size: 11px; font-weight: 700; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: '+'; position: absolute; right: 0; top: -2px; color: #559cc4; font-size: 18px; font-weight: 400; }
+    details[open] summary:after { content: '−'; }
+    details p { margin: 12px 0 0; color: #687b8d; font-size: 10px; line-height: 1.9; }
+    .disclaimer { margin-top: 36px; padding: 18px 20px; border-left: 3px solid #73c8dd; border-radius: 0 10px 10px 0; background: #eaf5f9; color: #526c7c; font-size: 9px; line-height: 1.9; }
+    footer { padding: 49px 0 26px; color: #a8bac9; background: #071321; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .footer-brand img { display: block; width: 128px; height: auto; object-fit: contain; }
+    .footer-brand p { max-width: 340px; color: #8296a9; font-size: 9px; line-height: 1.9; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; color: #becbd7; font-size: 9px; }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; color: #6e8295; font-size: 8px; }
+    @media (max-width: 950px) {
+      .navlinks { gap: 15px; }
+      .hero-grid { gap: 30px; }
+      .chip-one { left: -1%; }
+      .intro-grid, .growth-layout, .faq-grid { gap: 38px; }
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { min-height: 68px; }
+      .brand img { width: 110px; }
+      .navlinks, .nav-cta { display: none; }
+      .mobile-nav { display: block; position: relative; color: #d9e6f0; }
+      .mobile-nav summary { padding: 9px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 9px; color: #d9e6f0; font-size: 10px; }
+      .mobile-nav summary:after { content: ''; }
+      .mobile-nav[open] summary { margin-bottom: 8px; }
+      .mobile-nav-links { position: absolute; right: 0; top: 42px; width: 190px; display: grid; gap: 0; padding: 7px; border: 1px solid rgba(255,255,255,.13); border-radius: 12px; background: #0d2032; box-shadow: 0 18px 40px rgba(0,0,0,.3); }
+      .mobile-nav-links a { padding: 10px; color: #c5d2df; font-size: 10px; }
+      .hero { padding: 68px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+      h1 { font-size: clamp(36px, 10vw, 51px); }
+      .hero-copy { font-size: 13px; }
+      .dashboard-scene { min-height: 355px; }
+      .dash-window { transform: none; }
+      .chip-one { left: 0; top: -2%; }
+      .chip-two { right: 0; bottom: -1%; }
+      .trust-inner { justify-content: flex-start; }
+      .trust-label { width: 100%; }
+      section { padding: 72px 0; }
+      .intro-grid, .growth-layout, .video-grid, .faq-grid { grid-template-columns: 1fr; }
+      .intro-points { margin-top: 6px; }
+      .platform-grid, .intelligence-grid { grid-template-columns: 1fr; }
+      .growth-layout { gap: 31px; }
+      .cycle-flow { grid-template-columns: repeat(3, 1fr); }
+      .video-grid { gap: 33px; }
+      .assistant-banner { grid-template-columns: 1fr; padding: 26px; }
+      .assistant-stamp { display: none; }
+      .safety-grid { grid-template-columns: 1fr; }
+      .faq-grid { gap: 24px; }
+      .footer-top, .footer-bottom { flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .dash-grid { gap: 5px; }
+      .metric { padding: 9px 7px; }
+      .metric-value { font-size: 12px; }
+      .dash-bottom { grid-template-columns: 1fr; }
+      .tasks-card { display: none; }
+      .floating-chip { padding: 8px 10px; }
+      .floating-chip small { display: none; }
+      .intro-points { grid-template-columns: 1fr; }
+      .platform-card { padding: 23px; }
+      .cycle-flow { grid-template-columns: repeat(2, 1fr); }
+      .video-float.a { left: 3%; }
+      .video-float.b { right: 3%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="MLF BRASIL — início"><img src="assets/logo-mlf-brasil.png" alt="MLF BRASIL"></a>
+      <nav class="navlinks" aria-label="Navegação principal">
+        <a href="#plataforma">Plataforma</a>
+        <a href="#marketplaces">Marketplaces</a>
+        <a href="#crescimento">Crescimento</a>
+        <a href="#inteligencia">Inteligência</a>
+        <a href="#seguranca">Segurança</a>
+      </nav>
+      <a class="nav-cta" href="#plataforma">Conheça a plataforma <span aria-hidden="true">↗</span></a>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-links" aria-label="Navegação móvel">
+          <a href="#plataforma">Plataforma</a>
+          <a href="#marketplaces">Marketplaces</a>
+          <a href="#crescimento">Crescimento</a>
+          <a href="#inteligencia">Inteligência</a>
+          <a href="#seguranca">Segurança</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Gestão inteligente para marketplaces</div>
+          <h1>Mais clareza na operação.<br><span>Mais inteligência para crescer.</span></h1>
+          <p class="hero-copy">A MLF BRASIL reúne ferramentas de gestão, análise e automação supervisionada para ajudar vendedores a organizar sua operação na Shopee e no Mercado Livre — do acompanhamento diário às próximas oportunidades de crescimento.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#plataforma">Explore a plataforma <span aria-hidden="true">→</span></a>
+            <a class="btn-ghost" href="#marketplaces">Ver os marketplaces</a>
+          </div>
+          <p class="hero-note"><strong>Uma visão conectada da operação.</strong> Ações reais continuam sujeitas às permissões, configurações e confirmações de cada módulo.</p>
+        </div>
+        <div class="dashboard-scene" aria-label="Ilustração conceitual de um painel de gestão">
+          <div class="orb"></div>
+          <div class="floating-chip chip-one"><span class="chip-icon">⌁</span><span><strong>Visão integrada</strong><small>Indicadores e rotinas em um só lugar</small></span></div>
+          <div class="dash-window">
+            <div class="dash-top"><div class="dash-brand"><span class="dash-symbol">M</span> MLF BRASIL <span style="color:#71889d;font-weight:400">/ Visão geral</span></div><span class="dash-tag">PAINEL ILUSTRATIVO</span></div>
+            <div class="dash-grid">
+              <div class="metric"><span class="metric-label">Marketplaces</span><b class="metric-value">02</b><div class="metric-hint">Shopee + Mercado Livre</div></div>
+              <div class="metric"><span class="metric-label">Gestão</span><b class="metric-value">Centralizada</b><div class="metric-hint">Módulos conectados</div></div>
+              <div class="metric"><span class="metric-label">Inteligência</span><b class="metric-value">Ativa</b><div class="metric-hint">Análise e planejamento</div></div>
+            </div>
+            <div class="dash-bottom">
+              <div class="chart-card"><div class="mini-head"><span>Acompanhamento de desempenho</span><span>VISUAL ILUSTRATIVO</span></div><div class="chart"><i style="height:30%"></i><i style="height:44%"></i><i style="height:39%"></i><i style="height:62%"></i><i style="height:55%"></i><i style="height:76%"></i><i style="height:88%"></i><i style="height:70%"></i><i style="height:95%"></i></div></div>
+              <div class="tasks-card"><div class="mini-head"><span>Frentes de trabalho</span><span>MLF</span></div><div class="task"><i class="task-dot"></i> Gestão de anúncios</div><div class="task"><i class="task-dot blue"></i> Ciclo de crescimento</div><div class="task"><i class="task-dot purple"></i> Shopee Vídeo</div></div>
+            </div>
+          </div>
+          <div class="floating-chip chip-two"><span class="chip-icon">✦</span><span><strong>Gerente Geral</strong><small>Prioridades, estratégias e supervisão</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="wrap trust-inner">
+        <span class="trust-label">Uma plataforma para sua operação em</span>
+        <div class="market"><span class="market-mark ml">ML</span> Mercado Livre</div>
+        <div class="market"><span class="market-mark sp">S</span> Shopee</div>
+        <span style="color:#7f93a6;font-size:9px">Extensão para Google Chrome</span>
+      </div>
+    </div>
+
+    <section id="plataforma">
+      <div class="wrap intro-grid">
+        <div>
+          <div class="section-kicker">A plataforma</div>
+          <h2 class="section-title">Sua operação tem muitas partes. Sua gestão não precisa ser fragmentada.</h2>
+          <p class="section-copy">A MLF BRASIL foi desenvolvida para apoiar quem vende em marketplaces e precisa acompanhar anúncios, pedidos, atendimento, desempenho e rotinas de crescimento sem perder a visão do conjunto.</p>
+        </div>
+        <div class="intro-points">
+          <article class="point"><div class="point-icon">▦</div><h3>Organização</h3><p>Áreas específicas para acompanhar atividades e rotinas de cada marketplace.</p></article>
+          <article class="point"><div class="point-icon">◷</div><h3>Acompanhamento</h3><p>Indicadores, histórico e alertas para entender o que está acontecendo na operação.</p></article>
+          <article class="point"><div class="point-icon">✧</div><h3>Inteligência</h3><p>Análises e sugestões que ajudam a transformar dados em prioridades de trabalho.</p></article>
+          <article class="point"><div class="point-icon">⌘</div><h3>Automação supervisionada</h3><p>Rotinas que respeitam regras, filas, permissões e confirmações antes de ações sensíveis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft" id="marketplaces">
+      <div class="wrap">
+        <div class="center-head">
+          <div class="section-kicker">Gestão por marketplace</div>
+          <h2 class="section-title">Duas operações. Ferramentas para cada realidade.</h2>
+          <p class="section-copy">Acesse módulos específicos para acompanhar processos e executar rotinas de acordo com as possibilidades de cada plataforma e das permissões disponíveis.</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform-card">
+            <div class="platform-head"><div class="platform-icon shopee">S</div><div><h3>Gestão Shopee</h3><div class="sub">Operação, análise e automações</div></div></div>
+            <p>Um conjunto de ferramentas para organizar anúncios, catálogo, pedidos, atendimento e pós-venda, além de acompanhar tráfego, promoções, cupons e indicadores da loja.</p>
+            <div class="tag-list"><span class="tag">Anúncios e catálogo</span><span class="tag">Pedidos</span><span class="tag">Atendimento</span><span class="tag">Promoções e cupons</span><span class="tag">Tráfego e desempenho</span><span class="tag">Pós-venda</span></div>
+          </article>
+          <article class="platform-card">
+            <div class="platform-head"><div class="platform-icon mercado">ML</div><div><h3>Gestão Mercado Livre</h3><div class="sub">Acompanhamento e produtividade</div></div></div>
+            <p>Ferramentas voltadas à gestão de anúncios e pedidos, análise de resultados e apoio às rotinas da operação, incluindo processos de duplicação que preservam as regras configuradas no sistema.</p>
+            <div class="tag-list"><span class="tag">Anúncios</span><span class="tag">Pedidos</span><span class="tag">Desempenho</span><span class="tag">Duplicação</span><span class="tag">GTIN / EAN</span><span class="tag">Rotinas assistidas</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="crescimento">
+      <div class="wrap">
+        <div class="section-kicker">Ciclo de crescimento</div>
+        <h2 class="section-title">Crescer também é aprender<br>com cada anúncio.</h2>
+        <p class="section-copy">O Ciclo de Crescimento procura oportunidades nos anúncios, encaminha candidatos para os fluxos de duplicação existentes e acompanha os resultados para identificar o que merece ser expandido.</p>
+        <div class="growth-layout">
+          <div class="growth-list">
+            <div class="growth-step"><span class="step-number">01</span><div><h3>Localizar potencial</h3><p>Analisa indicadores disponíveis e identifica anúncios elegíveis em cada marketplace.</p></div></div>
+            <div class="growth-step"><span class="step-number">02</span><div><h3>Expandir com regras existentes</h3><p>Encaminha anúncios selecionados para as filas normais de duplicação, preservando as validações de cada plataforma.</p></div></div>
+            <div class="growth-step"><span class="step-number">03</span><div><h3>Medir os resultados</h3><p>Acompanha visitas, impressões, cliques, pedidos e conversões conforme os dados fornecidos por cada API.</p></div></div>
+            <div class="growth-step"><span class="step-number">04</span><div><h3>Aprender e priorizar</h3><p>Identifica sinais de desempenho fraco ou positivo e ajusta quais anúncios devem receber nova atenção.</p></div></div>
+          </div>
+          <div class="cycle-card">
+            <div class="cycle-title"><span>O ciclo em movimento</span><span class="cycle-pill">ATÉ 20 ANÚNCIOS / DIA</span></div>
+            <div class="cycle-flow">
+              <div class="flow-node"><span class="flow-icon">⌕</span><b>Analisar</b><span>Encontrar oportunidades</span></div>
+              <div class="flow-node"><span class="flow-icon">⧉</span><b>Duplicar</b><span>Usar fluxo existente</span></div>
+              <div class="flow-node"><span class="flow-icon">◫</span><b>Medir</b><span>Acompanhar indicadores</span></div>
+              <div class="flow-node"><span class="flow-icon">✧</span><b>Aprender</b><span>Reconhecer padrões</span></div>
+              <div class="flow-node"><span class="flow-icon">↗</span><b>Expandir</b><span>Priorizar vencedores</span></div>
+            </div>
+            <p class="cycle-note">O limite de até 20 origens por dia é global, somando Shopee e Mercado Livre. A rotina começa desativada, depende de ativação pelo usuário e não pausa nem exclui automaticamente os anúncios originais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inteligencia">
+      <div class="wrap">
+        <div class="section-kicker">Cérebro Central e Gerente Geral</div>
+        <h2 class="section-title">Da informação à próxima decisão.</h2>
+        <p class="section-copy">A camada de inteligência ajuda a organizar diagnósticos, prioridades e propostas de ação. O objetivo é deixar mais claro o que merece atenção e por quê — sem retirar do usuário o controle sobre a operação.</p>
+        <div class="intelligence-grid">
+          <article class="intelligence-card">
+            <h3>Cérebro Central</h3>
+            <p>Consolida informações da operação para construir uma leitura estratégica, apontar riscos e oportunidades e organizar um plano de ação. Na versão atual, o diagnóstico estratégico-financeiro centralizado está concentrado nos dados da Shopee.</p>
+            <div class="mini-features"><div class="mini-feature"><span class="check">✓</span><span>Diagnóstico e prioridades da operação</span></div><div class="mini-feature"><span class="check">✓</span><span>Plano de ação com tarefas organizadas</span></div><div class="mini-feature"><span class="check">✓</span><span>Acompanhamento de propostas e pendências</span></div></div>
+          </article>
+          <article class="intelligence-card">
+            <h3>Gerente Geral e Assistente</h3>
+            <p>Conecta o planejamento ao assistente por texto e voz. O usuário pode consultar o sistema, pedir análises, revisar propostas e autorizar ações específicas.</p>
+            <div class="mini-features"><div class="mini-feature"><span class="check">✓</span><span>Comandos por voz e texto para consultar o sistema</span></div><div class="mini-feature"><span class="check">✓</span><span>Propostas e rascunhos sujeitos à aprovação</span></div><div class="mini-feature"><span class="check">✓</span><span>Execução de filas aprovadas mediante confirmação</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" id="shopee-video">
+      <div class="wrap">
+        <div class="video-grid">
+          <div class="video-visual" aria-label="Ilustração conceitual de um vídeo de produto em um celular">
+            <div class="video-float a"><span style="color:#e86a4c;font-size:16px">▣</span><span><strong>Biblioteca de vídeos</strong><small>Arquivos associados a produtos</small></span></div>
+            <div class="phone"><div class="phone-screen"></div><div class="phone-top"><b>Vídeos</b><span>•••</span></div><div class="phone-video"><span class="play">▶</span></div><div class="phone-caption">Conteúdo de produto</div><div class="phone-lines"></div></div>
+            <div class="video-float b"><span style="color:#3288b7;font-size:16px">▤</span><span><strong>Desempenho</strong><small>Visualizações e conversões</small></span></div>
+          </div>
+          <div>
+            <div class="section-kicker">Shopee Vídeo inteligente</div>
+            <h2 class="section-title">Conteúdo com estratégia, não no improviso.</h2>
+            <p class="section-copy">O módulo Shopee Vídeo organiza a biblioteca de materiais, seleciona produtos elegíveis, agenda publicações e acompanha os resultados disponíveis para orientar os próximos conteúdos.</p>
+            <div class="video-feature-list">
+              <div class="video-feature"><span class="feature-icon">▦</span><div><b>Calendário e biblioteca</b><span>Organização dos materiais autorizados e programação das publicações.</span></div></div>
+              <div class="video-feature"><span class="feature-icon">⌕</span><div><b>Seleção inteligente de produtos</b><span>Considera situação do anúncio, estoque, potencial e histórico de vídeos.</span></div></div>
+              <div class="video-feature"><span class="feature-icon">◴</span><div><b>Desempenho e conversões</b><span>Acompanha visualizações, engajamento, cliques e vendas quando esses dados forem retornados pela Shopee.</span></div></div>
+              <div class="video-feature"><span class="feature-icon">✧</span><div><b>Aprendizado por publicação</b><span>Ajuda a decidir quando testar outro formato ou priorizar um segundo, terceiro ou quarto vídeo para o produto.</span></div></div>
+            </div>
+            <p style="margin:20px 0 0;color:#7d8e9d;font-size:9px;line-height:1.8">O ciclo pode programar até dois vídeos por dia e considera até quatro vídeos por produto. A publicação depende da aprovação/habilitação da Shopee Video Open API, da autorização específica da conta e das validações da plataforma.</p>
+          </div>
+        </div>
+        <div class="assistant-banner">
+          <div><h3>Uma operação que conversa com você.</h3><p>O Assistente de voz e texto pode consultar informações e encaminhar comandos ao Gerente Geral. Quando uma ação puder alterar anúncios ou publicar conteúdo, o sistema exige confirmação e respeita as regras e travas do módulo correspondente.</p></div>
+          <div class="assistant-stamp" aria-hidden="true">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seguranca">
+      <div class="wrap">
+        <div class="center-head">
+          <div class="section-kicker">Controle e segurança</div>
+          <h2 class="section-title">Automatizar sem perder o controle.</h2>
+          <p class="section-copy">A automação é construída em torno das regras configuradas e dos limites de cada integração. O usuário continua no comando das decisões que afetam a loja.</p>
+        </div>
+        <div class="safety-grid">
+          <article class="safety-card"><div class="safety-icon">✓</div><b>Confirmação para ações sensíveis</b><p>Ativações e execuções que podem publicar ou alterar dados pedem autorização explícita, conforme o módulo.</p></article>
+          <article class="safety-card"><div class="safety-icon">⏸</div><b>Filas e mecanismos de proteção</b><p>As rotinas reaproveitam os executores existentes e suas validações, respeitando limites e controles operacionais.</p></article>
+          <article class="safety-card"><div class="safety-icon">◉</div><b>Permissões transparentes</b><p>Recursos dependentes de API só funcionam quando a conta, o aplicativo e as permissões necessárias estão habilitados.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="duvidas">
+      <div class="wrap faq-grid">
+        <div><div class="section-kicker">Informações importantes</div><h2 class="section-title">Perguntas frequentes.</h2><p class="section-copy">Entenda como a MLF BRASIL se conecta à operação e quais são os requisitos para usar os recursos integrados.</p></div>
+        <div class="faq-list">
+          <details><summary>A MLF BRASIL é um marketplace?</summary><p>Não. É uma plataforma complementar de gestão, acompanhamento e automação para operações que vendem em marketplaces. Os anúncios e pedidos continuam nas contas oficiais de cada plataforma.</p></details>
+          <details><summary>Como o sistema se conecta à Shopee e ao Mercado Livre?</summary><p>Por integrações e autorizações específicas de cada plataforma. O acesso e os recursos disponíveis dependem das permissões concedidas à conta e ao aplicativo.</p></details>
+          <details><summary>O Gerente Geral faz alterações sozinho?</summary><p>O Gerente Geral pode analisar dados, organizar prioridades e propor ações. Operações que exigem autorização seguem os fluxos de confirmação, aprovação e segurança implementados em cada módulo.</p></details>
+          <details><summary>O Shopee Vídeo funciona automaticamente?</summary><p>O módulo oferece calendário, biblioteca, seleção de produtos e acompanhamento. Para publicar, é necessário habilitar o acesso à Shopee Video Open API, autorizar o usuário da loja e ativar o ciclo. A automação começa desligada.</p></details>
+          <details><summary>Esta página está conectada à minha loja?</summary><p>Não. Esta é uma página pública e exclusivamente informativa. Ela não acessa contas, não consulta dados, não instala a extensão e não executa nenhuma operação.</p></details>
+        </div>
+      </div>
+      <div class="wrap"><div class="disclaimer"><strong>Sobre disponibilidade:</strong> os recursos e indicadores dependem das APIs, permissões, autorizações e dados efetivamente disponibilizados por cada marketplace. Métricas ausentes ou não fornecidas por uma API não devem ser interpretadas como resultado zero. Esta página descreve os recursos da plataforma e não representa garantia de vendas, faturamento ou desempenho.</div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="assets/logo-mlf-brasil.png" alt="MLF BRASIL"><p>Gestão, inteligência e automação supervisionada para operações de marketplace.</p></div>
+        <nav class="footer-links" aria-label="Links do rodapé"><a href="#inicio">Início</a><a href="#marketplaces">Marketplaces</a><a href="#crescimento">Ciclo de Crescimento</a><a href="#inteligencia">Inteligência</a><a href="#duvidas">Perguntas frequentes</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> MLF BRASIL. Todos os direitos reservados.</span><span>Página institucional informativa · Não conectada às contas dos marketplaces.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
