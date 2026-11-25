@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1c2d"><title>MLF BRASIL · Central Remota</title>
+<link rel="stylesheet" href="./style.css"><script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head><body><div class="app-shell">
+<header class="topbar"><div class="brand"><div class="logo">MLF</div><div><strong>MLF BRASIL</strong><span>CENTRAL REMOTA</span></div></div><div class="live"><i></i> BOT CONECTADO</div></header>
+<main>
+<section class="welcome"><div class="eyebrow">PAINEL DE OPERAÇÕES</div><h1>Olá<span id="firstName"></span>,<br>o que vamos resolver?</h1><p>Comande sua operação pelo Telegram. As solicitações são encaminhadas ao assistente que já opera no seu computador.</p><div class="statusline"><span class="pulse"></span><span>Central pronta para enviar comandos</span><small id="today"></small></div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">VISÃO GERAL</span><h2>Acesso rápido</h2></div><button class="text-button" data-command="painel">Atualizar painel ↗</button></div>
+<div class="grid">
+<button class="tile tile-primary" data-command="painel"><span class="tile-icon">▦</span><strong>Resumo do dia</strong><small>Vendas e indicadores</small><b>ABRIR PAINEL ↗</b></button>
+<button class="tile" data-command="o que fazer agora"><span class="tile-icon">✓</span><strong>O que fazer</strong><small>Pendências prioritárias</small></button>
+<button class="tile" data-command="rotina"><span class="tile-icon">◷</span><strong>Rotinas</strong><small>Agenda e execução</small></button>
+<button class="tile" data-command="robos"><span class="tile-icon">⌘</span><strong>Robôs</strong><small>Estado das automações</small></button>
+<button class="tile" data-command="resultados"><span class="tile-icon">↗</span><strong>Resultados</strong><small>Comparativo de vendas</small></button>
+<button class="tile" data-command="casos todos"><span class="tile-icon">▤</span><strong>Casos Duoke</strong><small>Clientes que precisam de você</small></button>
+</div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">MARKETPLACES</span><h2>Operação por canal</h2></div></div><div class="channel-list">
+<button class="channel" data-command="Como está a operação da Shopee?"><span class="channel-logo shopee">S</span><span><strong>Shopee</strong><small>Vendas, anúncios e automações</small></span><b>›</b></button>
+<button class="channel" data-command="Como está a operação do Mercado Livre?"><span class="channel-logo ml">ML</span><span><strong>Mercado Livre</strong><small>Vendas, perguntas e anúncios</small></span><b>›</b></button>
+<button class="channel" data-command="Como está o atendimento Duoke?"><span class="channel-logo duoke">D</span><span><strong>Atendimento Duoke</strong><small>Casos, dúvidas e aprendizagem</small></span><b>›</b></button>
+</div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">COMANDO DIRETO</span><h2>Fale com o assistente</h2></div></div>
+<form id="commandForm" class="composer"><textarea id="command" rows="2" maxlength="1000" placeholder="Ex.: verifique os anúncios com problemas..."></textarea><div class="composer-foot"><span>O mesmo assistente da MLF BRASIL</span><button type="submit">Enviar comando <b>➤</b></button></div></form>
+<p class="note">Ações que alteram anúncios, preços, campanhas ou dados continuam sujeitas às confirmações e proteções já existentes no assistente.</p></section>
+</main><footer><div class="footer-mark">MLF BRASIL</div><span>Central remota · Interface integrada ao Telegram</span></footer></div><script src="./app.js"></script></body></html>
